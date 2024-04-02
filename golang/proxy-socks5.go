@@ -2,9 +2,11 @@ package main
 
 import (
 	"fmt"
-	"golang.org/x/net/proxy"
 	"io/ioutil"
+	"net/http"
 	"time"
+
+	"golang.org/x/net/proxy"
 )
 
 func main() {

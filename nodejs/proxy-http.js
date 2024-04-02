@@ -1,15 +1,20 @@
 const axios = require("axios");
 
 const url = "API_URL";
-const resp = axios.get(url, {
+axios.get(url, {
     proxy: {
+        protocol: 'http',
         host: 'gw-us.nstproxy.com',
         port: 24125,
         auth: {
             username: 'username',
-            password: 'password'
-        }
-    }
-
+            password: 'password',
+        },
+    },
 })
-console.log(resp.data);
+    .then((res) => {
+        console.log(res.data);
+    })
+    .catch((err) => {
+        console.log('[err]:', err);
+    });
